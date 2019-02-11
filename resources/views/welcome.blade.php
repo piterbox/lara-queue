@@ -16,20 +16,25 @@
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-12">
                 @if(Session::has('status'))
                     <div class="alert alert-success">{{ session('status') }}</div>
                 @endif
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-12">
-                <form action="{{ route('file_upload') }}" method="post" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <input type="file" name="members_data" id="" >
-                    <button type="submit" >Upload</button>
-                </form>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{ route('file_upload') }}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <input type="file" name="members_data" id="" >
+                            <button class="btn btn-success" type="submit" >Upload</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
 

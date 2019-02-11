@@ -6,7 +6,7 @@ use App\DataFile;
 use App\Interfaces\FileReaderInterface;
 use App\Repositories\DataFileRepository;
 use App\Repositories\MemberRepository;
-use App\Service\FileReader;
+use App\Services\FileReader;
 use Illuminate\Bus\Queueable;
 use Illuminate\Http\Request;
 use Illuminate\Queue\SerializesModels;

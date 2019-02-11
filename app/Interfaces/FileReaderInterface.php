@@ -15,8 +15,7 @@ interface FileReaderInterface
 {
     /**
      * @param $row
-     * @param $handle
      * @return mixed
      */
-    public function readRow($row, $handle);
+    public function readRow($row);
 }

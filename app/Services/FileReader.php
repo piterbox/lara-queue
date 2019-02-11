@@ -6,12 +6,10 @@
  * Time: 14:42
  */
 
-namespace App\Service;
+namespace App\Services;
 use App\DataFile;
 use App\Interfaces\FileReaderInterface;
-use App\Interfaces\RepositoryInterface;
 use App\Jobs\ReadDataFile;
-use App\Member;
 use App\Repositories\DataFileRepository;
 use App\Repositories\MemberRepository;
 use Illuminate\Http\UploadedFile;
@@ -63,7 +61,7 @@ class FileReader implements FileReaderInterface
 
         $this->handler = fopen($this->file, "rb");
 
-        app()->instance('App\Service\FileReader', $this);
+        app()->instance('App\Services\FileReader', $this);
 
         for($i = 0; $i <= $steps; $i++) {
             $this->step = $i;
@@ -78,10 +76,9 @@ class FileReader implements FileReaderInterface
 
     /**
      * @param $row
-     * @param $handle
      * @return mixed
      */
-    public function readRow($row, $handle)
+    public function readRow($row)
     {
 
         $result = preg_replace("/[\t\r\n]/",'~',$row);
@@ -109,14 +106,14 @@ class FileReader implements FileReaderInterface
     /**
      * @throws \Exception
      */
-    public function handlePartOfFile( )
+    public function handlePartOfFile()
     {
         $this->counter = 1;
         while (!feof($this->handler) && $this->counter <= self::MAX_READ_ROWS){
 
             try{
                 $row = fgets($this->handler);
-                $data = $this->readRow($row, $this->handler);
+                $data = $this->readRow($row);
                 MemberRepository::save($data);
                 DataFileRepository::save([
                     'ready_members' => $this->ready

@@ -11,7 +11,7 @@ namespace App\Repositories;
 
 use App\DataFile;
 use App\Interfaces\RepositoryInterface;
-use Illuminate\Database\Eloquent\Model;
+
 
 class DataFileRepository implements RepositoryInterface
 {

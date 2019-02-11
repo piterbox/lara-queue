@@ -11,7 +11,7 @@ namespace App\Repositories;
 
 use App\Interfaces\RepositoryInterface;
 use App\Member;
-use Illuminate\Database\Eloquent\Model;
+
 
 class MemberRepository implements RepositoryInterface
 {

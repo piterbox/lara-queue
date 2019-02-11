@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\DataFile;
-use App\Interfaces\FileReaderInterface;
-use App\Jobs\ReadDataFile;
 use App\Repositories\DataFileRepository;
-use App\Service\FileReader;
+use App\Services\FileReader;
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\Cloner\Data;
+
 
 class MemberDataController extends Controller
 {
@@ -31,15 +29,15 @@ class MemberDataController extends Controller
 
         $fileReader = new FileReader($file, $dataFile);
         $fileReader->readFile();
+
         DataFileRepository::save(
             [
                 'state' => DataFile::STATUS_READY,
                 'read_at' => (new \DateTime())
             ], $dataFile);
 
-
-        //session()->flash('status', 'Data from file was read!');
-        //return redirect('/');
+        session()->flash('status', 'Data from file was read!');
+        return redirect('/');
     }
 
     public function getData()
