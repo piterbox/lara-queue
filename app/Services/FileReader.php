@@ -18,6 +18,19 @@ class FileReader implements FileReaderInterface
 {
     const MAX_READ_ROWS = 6;
 
+    const INDEX_FULL_NAME = 5;
+    const INDEX_ADDRESS_FIRST_PART = 6;
+    const INDEX_ADDRESS_SECOND_PART = 7;
+    const INDEX_CITY = 8;
+    const INDEX_STATE = 9;
+    const INDEX_ZIP_CODE = 10;
+    const INDEX_IS_UNION = 11;
+    const INDEX_MEMBER_NUMBER = 3;
+    const INDEX_EMAIL = 24;
+    const INDEX_PHONE = 25;
+    const MIN_COUNT_COLUMNS = 25;
+
+
     /**
      * @var DataFile
      */
@@ -89,16 +102,16 @@ class FileReader implements FileReaderInterface
             if(trim($item) != '') $newArr[] = trim($item);
         }
         $data = [];
-        if(count($newArr) >= 25){
-            $data['full_name'] = $newArr[5];
-            $data['address'] = $newArr[6] . ' ' . $newArr[7];
-            $data['city'] = $newArr[8];
-            $data['state'] = $newArr[9];
-            $data['zipcode'] = $newArr[10];
-            $data['is_union'] = $newArr[11];
-            $data['member_number'] = $newArr[3];
-            $data['email'] = $newArr[24];
-            $data['phone'] = $newArr[25];
+        if(count($newArr) >= self::MIN_COUNT_COLUMNS){
+            $data['full_name'] = $newArr[self::INDEX_FULL_NAME];
+            $data['address'] = $newArr[self::INDEX_ADDRESS_FIRST_PART] . ' ' . $newArr[self::INDEX_ADDRESS_SECOND_PART];
+            $data['city'] = $newArr[self::INDEX_CITY];
+            $data['state'] = $newArr[self::INDEX_STATE];
+            $data['zipcode'] = $newArr[self::INDEX_ZIP_CODE];
+            $data['is_union'] = $newArr[self::INDEX_IS_UNION];
+            $data['member_number'] = $newArr[self::INDEX_MEMBER_NUMBER];
+            $data['email'] = $newArr[self::INDEX_EMAIL];
+            $data['phone'] = $newArr[self::INDEX_PHONE];
             $data['data_file_id'] = $this->dataFile->id;
         }
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88355cb7-4ba6-4bed-99ca-bab2205af2f0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Jobs/ReadDataFile.php" afterPath="$PROJECT_DIR$/app/Jobs/ReadDataFile.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Services/FileReader.php" afterPath="$PROJECT_DIR$/app/Services/FileReader.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="FileReader.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/FileReader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="352">
+              <caret line="104" column="52" lean-forward="false" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -350,12 +350,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549873677966</updated>
       <workItem from="1549873679482" duration="49525000" />
-      <workItem from="1549953292036" duration="870000" />
+      <workItem from="1549953292036" duration="2085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50395000" />
+    <option name="totallyTimeSpent" value="51610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -644,8 +644,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/FileReader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+        <state relative-caret-position="352">
+          <caret line="104" column="52" lean-forward="false" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
           <folding />
         </state>
       </provider>
