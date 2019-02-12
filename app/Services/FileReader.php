@@ -88,17 +88,19 @@ class FileReader implements FileReaderInterface
         foreach ($arr as $item) {
             if(trim($item) != '') $newArr[] = trim($item);
         }
-
-        $data['full_name'] = $newArr[5];
-        $data['address'] = $newArr[6] . '' . $newArr[7];
-        $data['city'] = $newArr[8];
-        $data['state'] = $newArr[9];
-        $data['zipcode'] = $newArr[10];
-        $data['is_union'] = $newArr[11];
-        $data['member_number'] = $newArr[3];
-        $data['email'] = $newArr[24];
-        $data['phone'] = $newArr[25];
-        $data['data_file_id'] = $this->dataFile->id;
+        $data = [];
+        if(count($newArr) >= 25){
+            $data['full_name'] = $newArr[5];
+            $data['address'] = $newArr[6] . ' ' . $newArr[7];
+            $data['city'] = $newArr[8];
+            $data['state'] = $newArr[9];
+            $data['zipcode'] = $newArr[10];
+            $data['is_union'] = $newArr[11];
+            $data['member_number'] = $newArr[3];
+            $data['email'] = $newArr[24];
+            $data['phone'] = $newArr[25];
+            $data['data_file_id'] = $this->dataFile->id;
+        }
 
         return $data;
     }
