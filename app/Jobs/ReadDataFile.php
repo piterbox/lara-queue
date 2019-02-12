@@ -3,13 +3,8 @@
 namespace App\Jobs;
 
 use App\DataFile;
-use App\Interfaces\FileReaderInterface;
-use App\Repositories\DataFileRepository;
-use App\Repositories\MemberRepository;
 use App\Services\FileReader;
 use Illuminate\Bus\Queueable;
-use Illuminate\Http\Request;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

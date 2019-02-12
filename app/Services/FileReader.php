@@ -65,7 +65,7 @@ class FileReader implements FileReaderInterface
 
         for($i = 0; $i <= $steps; $i++) {
             $this->step = $i;
-            dispatch((new ReadDataFile())->delay(60));
+            dispatch(new ReadDataFile());
 
         }
 
